@@ -24,7 +24,7 @@ update their ledgers as to keep track of said transactions ocurring and for the
 ledger to be true at all times.
 
 Considering that this game is designed to be played by 2 up to 8 players, 
-this record could be easiyl kept by hand on a piece of paper by each player.
+this record could be easily kept by hand on a piece of paper by each player.
 
 *Anyone* could be part of this control ledger, but not *everybody* might want 
 to be part of it, as it entiles work, and nobody likes to work for free.
