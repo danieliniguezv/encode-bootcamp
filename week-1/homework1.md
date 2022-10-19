@@ -14,7 +14,7 @@ Monopoly is a board game where you buy and sell property and utility services.
 Money is issued by a central bank and originally at the beginning is the 
 same bank that owns the  property and utility.
 
-If we were to have a decentralised version of said boardgame then we would 
+If we were to have a decentralised version of said board game then we would 
 have that every player in the board game would initially have a record of the 
 total amount of money available and the balances of each player. Property 
 ownership records would also be held by the players.
