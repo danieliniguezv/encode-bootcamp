@@ -21,7 +21,7 @@ ownership records would also be held by the players.
 
 At any given time when a transaction were to be performed eveybody should 
 update their ledgers as to keep track of said transactions ocurring and for the 
-ledger to de true at all times.
+ledger to be true at all times.
 
 Considering that this game is designed to be played by 2 up to 8 players, 
 this record could be easiyl kept by hand on a piece of paper by each player.
