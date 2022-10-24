@@ -38,11 +38,10 @@ of the contract.
 16. Now add a public function called transfer to allow a user to transfer 
 their tokens to another address. This function should have 2 parameters:
 	1. The amount to transfer and,
-	2. The recipient addres.
-
-Why do we not need the sender's address here?
-What would be the implication of having the sender's address as a parameter?
-17. Add an event to the transfer function to indicate that a transfer has taken 
+	2. The recipient address.
+	Why do we not need the sender's address here?
+	What would be the implication of having the sender's address as a parameter?
+	17. Add an event to the transfer function to indicate that a transfer has taken 
 place, it should log the amount and the recipient address.
 18. We want to keep a record for each user's transfers. Create a ````struct````
 called Payment that stores the transfer amount and the recipient's address.
