@@ -15,9 +15,7 @@ contract VolcanoCoin {
 		address recipient;
 	}
 
-	Payment payer;
-
-	mapping(address => Payment) paymentRegister;
+	mapping(address => Payment[]) paymentRegister;
 	
 	modifier onlyOwner {
 		if (msg.sender == owner) {
@@ -49,14 +47,13 @@ contract VolcanoCoin {
 	}
 	
 	function transfer(uint256 _amount, address _recipient) public {
-		payer.amount = _amount;
-		payer.recipient = _recipient;
 		userBalances[owner] = userBalances[owner] - _amount;
 		userBalances[_recipient] = _amount;
 		emit coinTransfer(_amount, _recipient);
+		paymentRegister[msg.sender].push(Payment({recipient: _recipient, amount: _amount}));
 	}
 	
-	function getPaymentsAddress(address _user) public view returns (uint256, address) {
+	function getPaymentsAddress(address _user) public view returns (Payment[] memory) {
 		return paymentRegister[_user];
 	}
 }
