@@ -47,7 +47,7 @@ contract VolcanoCoin {
 	}
 	
 	function transfer(uint256 _amount, address _recipient) public {
-		userBalances[owner] = userBalances[owner] - _amount;
+		userBalances[msg.sender] = userBalances[msg.sender] - _amount;
 		userBalances[_recipient] = _amount;
 		emit coinTransfer(_amount, _recipient);
 		paymentRegister[msg.sender].push(Payment({recipient: _recipient, amount: _amount}));
