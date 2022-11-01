@@ -1,4 +1,6 @@
-# VolcanoCoin contract
+# Homework 4
+
+## VolcanoCoin contract
 
 At each point where you change your contract you should re-deploy to the 
 JavascriptVM and test your changes.
