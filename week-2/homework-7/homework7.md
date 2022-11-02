@@ -4,7 +4,7 @@
 
 1. Write a function to view the payment records, specifying the user as an input.
 
-What is the difference between doing this and making the mapping public?
+	What is the difference between doing this and making the mapping public?
 
 2. For the payments record mapping, create a function called recordPayment that 
 takes:
