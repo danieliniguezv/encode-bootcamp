@@ -13,8 +13,11 @@ contract VolcanoCoin is Ownable {
 	mapping(address => uint256) userBalances;
 
 	struct Payment {
-		uint256 amount;
-		address recipient;
+		//uint256 amount;
+		//address recipient;
+		uint256 paymentAmount;
+		address sender;
+		address receiver;
 	}
 
 	mapping(address => Payment[]) paymentRegister;
@@ -52,10 +55,15 @@ contract VolcanoCoin is Ownable {
 		userBalances[msg.sender] = userBalances[msg.sender] - _amount;
 		userBalances[_recipient] = _amount;
 		emit coinTransfer(_amount, _recipient);
-		paymentRegister[msg.sender].push(Payment({recipient: _recipient, amount: _amount}));
+		//paymentRegister[msg.sender].push(Payment({recipient: _recipient, amount: _amount}));
+		recordPayment(msg.sender, _recipient, _amount);
 	}
 	
 	function getPaymentsAddress(address _user) public view returns (Payment[] memory) {
 		return paymentRegister[_user];
+	}
+
+	function recordPayment(address _sender, address _receiver, uint256 _paymentAmount) public {
+		paymentRegister[msg.sender].push(Payment({sender: _sender, receiver: _receiver, paymentAmount: _paymentAmount}));
 	}
 }
