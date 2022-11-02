@@ -6,8 +6,8 @@
 
 	What is the difference between doing this and making the mapping public?
 
-2. For the payments record mapping, create a function called recordPayment that 
-takes:
+2. For the payments record mapping, create a function called ```recordPayment``` 
+	that takes:
 
 	1. The sender's address,
 	2. The receiver's address, and
