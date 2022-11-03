@@ -10,7 +10,7 @@ contract VolcanoCoinTest is Test {
     VolcanoCoin public vCoin;
 
     function setUp() public {
-        vCoin = new VolcanoCoin
+        vCoin = new VolcanoCoin;
     }
 
     function testTotalSupply() public {
