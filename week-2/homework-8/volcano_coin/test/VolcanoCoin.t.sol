@@ -20,8 +20,11 @@ contract VolcanoCoinTest is Test, Ownable {
     }
     
     function testIncreaseSupply() public {
-        require(owner() == msg.sender);
         vCoin.increaseSupply();
         assertTrue(vCoin.coins() == 11000);
+    }
+
+    function testOwnerIncreaseSupply() public onlyOwner {
+        testIncreaseSupply();
     }
 }
