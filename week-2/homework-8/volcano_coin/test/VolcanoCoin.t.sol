@@ -2,7 +2,7 @@
 
 pragma solidity ^0.8.0;
 
-import "forge-std/Test.sol";
+import "../lib/forge-std/src/Test.sol";
 import "../lib/openzeppelin-contracts/contracts/access/Ownable.sol";
 import "../src/VolcanoCoin.sol";
 
