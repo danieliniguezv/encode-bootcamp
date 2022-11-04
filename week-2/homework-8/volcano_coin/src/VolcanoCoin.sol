@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract VolcanoCoin is Ownable {
 	
-	uint256 coins;
+	uint256 public coins;
 
 	//address owner;
 
