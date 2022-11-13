@@ -6,7 +6,7 @@ import "../lib/openzeppelin-contracts/contracts/token/ERC721/ERC721.sol";
 
 contract VolcanoNFT is ERC721 {
 
-    uint256 public tokenId_;
+    uint256 public _tokenId;
     
     //Mapping the token ID with the actual NFT.
     mapping(uint256 => string) public nft;
@@ -16,11 +16,12 @@ contract VolcanoNFT is ERC721 {
         string memory _nftName, 
         string memory _nftSymbol) 
         ERC721(_nftName, _nftSymbol){
-            tokenId_ = 0;
+            _tokenId = 0;
         }
 
     //This NFT stores a string.
-    function mint(uint256 _tokenId, string memory _nft) external {
+    function mint(string memory _nft) external {
+        _tokenId++;
         super._safeMint(msg.sender, _tokenId);
         nft[_tokenId] = _nft;
     }
