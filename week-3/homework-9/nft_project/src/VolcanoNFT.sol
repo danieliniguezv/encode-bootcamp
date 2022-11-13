@@ -22,12 +22,12 @@ contract VolcanoNFT is ERC721 {
     //This NFT stores a string.
     function mint(string memory _nft) external {
         _tokenId++;
-        super._safeMint(msg.sender, _tokenId);
+        super._mint(msg.sender, _tokenId);
         nft[_tokenId] = _nft;
     }
 
     //Transfer the NFT to a given addres.
     function transfer(address from_, address to_, uint256 tokenId_) external {
-        super.safeTransferFrom(from_, to_, tokenId_);
+        super._transfer(from_, to_, tokenId_);
     }
 }
