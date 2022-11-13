@@ -27,7 +27,7 @@ contract VolcanoNFT is ERC721 {
     }
 
     //Transfer the NFT to a given addres.
-    function transfer(address _from, address _to, uint256 _tokenId) external {
-        super.safeTransferFrom(_from, _to, _tokenId);
+    function transfer(address from_, address to_, uint256 tokenId_) external {
+        super.safeTransferFrom(from_, to_, tokenId_);
     }
 }
