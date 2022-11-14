@@ -14,13 +14,13 @@ contract VolcanoNFTTest is Test {
     }
 
     function testMint() public {
-        vNFT.mint{value: vNFT._price()}("This is a NFT");
+        vNFT.mint{value: vNFT._price()}("This is a NFT.");
         assertTrue(vNFT._tokenId() != 0);
         assertTrue(vNFT.balanceOf(address(this)) == 1);
     }
 
     function testTransfer() public {
-        vNFT.mint("This is a NFT");
+        vNFT.mint{value: vNFT._price()}("This is a NFT.");
         vNFT.transfer(address(this), address(this), 1);
         assertTrue(vNFT.balanceOf(address(this)) != 0);
     }
