@@ -16,8 +16,9 @@ contract VolcanoNFT is ERC721, Ownable {
     //Pass in the name of the NFT and its symbol.
     constructor(
         string memory _nftName, 
-        string memory _nftSymbol) 
-        ERC721(_nftName, _nftSymbol){
+        string memory _nftSymbol
+        ) 
+        ERC721(_nftName, _nftSymbol) {
             _tokenId = 0;
             _price = 0.01 ether;
         }
