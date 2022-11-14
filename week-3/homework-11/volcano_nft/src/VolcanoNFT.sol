@@ -8,7 +8,7 @@ import "../lib/openzeppelin-contracts/contracts/access/Ownable.sol";
 contract VolcanoNFT is ERC721, Ownable {
 
     uint256 public _tokenId;
-    uint256 private _price;
+    uint256 public _price;
     
     //Mapping the token ID with the actual NFT.
     mapping(uint256 => string) public nft;
