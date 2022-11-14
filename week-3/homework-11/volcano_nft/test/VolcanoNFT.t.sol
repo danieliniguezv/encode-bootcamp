@@ -20,7 +20,7 @@ contract VolcanoNFTTest is Test {
     }
 
     function testTransfer() public {
-        vNFT.mint{value: vNFT._price()}("This is a NFT.");
+        vNFT.mint{value: 0.01 ether}("This is a NFT.");
         vNFT.transfer(address(this), address(this), 1);
         assertTrue(vNFT.balanceOf(address(this)) != 0);
     }
