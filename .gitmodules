@@ -10,3 +10,6 @@
 [submodule "week-3/homework-9/nft_project/lib/forge-std"]
 	path = week-3/homework-9/nft_project/lib/forge-std
 	url = https://github.com/foundry-rs/forge-std
+[submodule "week-3/homework-11/volcano_nft/lib/forge-std"]
+	path = week-3/homework-11/volcano_nft/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
