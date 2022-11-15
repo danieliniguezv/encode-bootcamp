@@ -34,14 +34,14 @@ contract VolcanoNFT is ERC721, Ownable {
     //Pay with Volcano token.
     function payVolcano(uint256 _volcanoAmount) public {
         volcanoAmount_ = _volcanoAmount;
-        require(_volcanoAmount == _volcanoPrice, "NFT price is 1 VCC");
+        require(_volcanoAmount == _volcanoPrice, "NFT price is 1 VCC!!");
         volcanoToken.transfer(_volcanoAmount, msg.sender, address(this));
     }
 
     //This NFT stores a string.
     function mint(string memory _nft) external payable {
         if (msg.value < _price) {
-            if (volcanoAmount_ < _volcanoPrice) revert("NFT price is 0.01 ETH or 1 VCC");
+            if (volcanoAmount_ < _volcanoPrice) revert("NFT price is 0.01 ETH or 1 VCC!!");
         }
         volcanoAmount_ = 0;
         _tokenId++;
