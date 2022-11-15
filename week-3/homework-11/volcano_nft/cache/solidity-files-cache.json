@@ -1095,9 +1095,52 @@
         }
       }
     },
+    "lib/volcano-coin/VolcanoCoin.sol": {
+      "lastModificationDate": 1668486442000,
+      "contentHash": "4250f32387be35e34cfacc4458d7c94d",
+      "sourceName": "lib/volcano-coin/VolcanoCoin.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/openzeppelin-contracts/contracts/access/Ownable.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol"
+      ],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "VolcanoCoin": {
+          "0.8.17+commit.8df45f5f.Linux.gcc": "VolcanoCoin.sol/VolcanoCoin.json"
+        }
+      }
+    },
     "src/VolcanoNFT.sol": {
-      "lastModificationDate": 1668406523190,
-      "contentHash": "014f77dbcfda483cb4bb99bf8ce5689a",
+      "lastModificationDate": 1668549063500,
+      "contentHash": "dc0841c34b025263739d16592c05356c",
       "sourceName": "src/VolcanoNFT.sol",
       "solcConfig": {
         "settings": {
@@ -1138,7 +1181,8 @@
         "lib/openzeppelin-contracts/contracts/utils/Strings.sol",
         "lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol",
         "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
-        "lib/openzeppelin-contracts/contracts/utils/math/Math.sol"
+        "lib/openzeppelin-contracts/contracts/utils/math/Math.sol",
+        "lib/volcano-coin/VolcanoCoin.sol"
       ],
       "versionRequirement": "^0.8.0",
       "artifacts": {
@@ -1148,8 +1192,8 @@
       }
     },
     "test/VolcanoNFT.t.sol": {
-      "lastModificationDate": 1668393621000,
-      "contentHash": "3b35f8466fad14e98aeab8ffce5999aa",
+      "lastModificationDate": 1668553120220,
+      "contentHash": "1d4c7ea7920457e5d8e55818bb36dcd4",
       "sourceName": "test/VolcanoNFT.t.sol",
       "solcConfig": {
         "settings": {
@@ -1205,6 +1249,7 @@
         "lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol",
         "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
         "lib/openzeppelin-contracts/contracts/utils/math/Math.sol",
+        "lib/volcano-coin/VolcanoCoin.sol",
         "src/VolcanoNFT.sol"
       ],
       "versionRequirement": "^0.8.0",
