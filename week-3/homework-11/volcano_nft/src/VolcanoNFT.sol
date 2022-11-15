@@ -21,10 +21,11 @@ contract VolcanoNFT is ERC721, Ownable {
     //Pass in the name of the NFT and its symbol.
     constructor(
         string memory _nftName, 
-        string memory _nftSymbol
+        string memory _nftSymbol,
+        address _volcanoTokenAddress
         ) 
         ERC721(_nftName, _nftSymbol) {
-            volcanoToken = VolcanoCoin(/*Address for deployed contract*/);
+            volcanoToken = VolcanoCoin(_volcanoTokenAddress);
             _tokenId = 0;
             _price = 0.01 ether;
             _volcanoPrice = 1;
@@ -35,7 +36,6 @@ contract VolcanoNFT is ERC721, Ownable {
         volcanoAmount_ = _volcanoAmount;
         require(_volcanoAmount == _volcanoPrice);
         volcanoToken.transfer(_volcanoAmount, msg.sender, address(this));
-
     }
 
     //This NFT stores a string.
