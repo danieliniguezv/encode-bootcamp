@@ -34,7 +34,7 @@ contract VolcanoNFT is ERC721, Ownable {
     //Pay with Volcano token.
     function payVolcano(uint256 _volcanoAmount) public {
         volcanoAmount_ = _volcanoAmount;
-        require(_volcanoAmount == _volcanoPrice);
+        require(_volcanoAmount == _volcanoPrice, "NFT price is 1 VCC");
         volcanoToken.transfer(_volcanoAmount, msg.sender, address(this));
     }
 
@@ -55,7 +55,7 @@ contract VolcanoNFT is ERC721, Ownable {
     }
 
     //Withdraw NFT sales earnings.
-    function withdrawl(address payable _to) public onlyOwner {
+    function withdrawal(address payable _to) public onlyOwner {
         _to.transfer(address(this).balance);
     }
 
