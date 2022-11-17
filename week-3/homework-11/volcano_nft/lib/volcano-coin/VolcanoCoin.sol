@@ -7,6 +7,8 @@ import "../openzeppelin-contracts/contracts/access/Ownable.sol";
 contract VolcanoCoin is Ownable {
 	
 	uint256 public coins;
+	string _name;
+	string _symbol;
 
 	mapping(address => uint256) userBalances;
 
@@ -22,7 +24,8 @@ contract VolcanoCoin is Ownable {
 	event coinTransfer(uint256, address);
 	
 	constructor() {
-		//owner = msg.sender;
+		_name = "Volcano Coin";
+		_symbol = "VCC";
 		coins = 10000;
 		userBalances[msg.sender] = coins;
 	}
