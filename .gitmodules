@@ -16,3 +16,6 @@
 [submodule "week-3/homework-11/volcano_nft/lib/openzeppelin-contracts"]
 	path = week-3/homework-11/volcano_nft/lib/openzeppelin-contracts
 	url = https://github.com/OpenZeppelin/openzeppelin-contracts
+[submodule "week-3/homework-12/week-3/homework-12/SolidityBootcamp"]
+	path = week-3/homework-12/week-3/homework-12/SolidityBootcamp
+	url = https://github.com/ExtropyIO/SolidityBootcamp.git
