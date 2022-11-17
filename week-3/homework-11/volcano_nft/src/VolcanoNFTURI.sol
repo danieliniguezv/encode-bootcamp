@@ -2,12 +2,12 @@
 
 pragma solidity ^0.8.0;
 
-//import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+//import "../lib/openzeppelin-contracts/contracts/token/ERC721/ERC721.sol";
 import "../lib/openzeppelin-contracts/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "../lib/openzeppelin-contracts/contracts/access/Ownable.sol";
 import "../lib/volcano-coin/VolcanoCoin.sol";
 
-contract VolcanoNFT is ERC721URIStorage, Ownable {
+contract VolcanoNFT is /*ERC721,*/ ERC721URIStorage, Ownable {
 
     VolcanoCoin volcanoToken;
 
@@ -17,15 +17,15 @@ contract VolcanoNFT is ERC721URIStorage, Ownable {
     uint256 public volcanoAmount_;
     
     //Mapping the token ID with the actual NFT.
-    mapping(uint256 => string) public nftURI;
+    //mapping(uint256 => string) public nft;
     
-    //Pass in the name of the NFT and its symbol.
+    //Pass in the address of the Volcano token contract.
     constructor(
-        string memory _nftName, 
-        string memory _nftSymbol,
+        //string memory _nftName, 
+        //string memory _nftSymbol,
         address _volcanoTokenAddress
         ) 
-        ERC721(_nftName, _nftSymbol) {
+        ERC721("Volcano NFT", "VLT") {
             volcanoToken = VolcanoCoin(_volcanoTokenAddress);
             _tokenId = 0;
             _price = 0.01 ether;
@@ -39,15 +39,17 @@ contract VolcanoNFT is ERC721URIStorage, Ownable {
         volcanoToken.transfer(_volcanoAmount, msg.sender, address(this));
     }
 
-    //This NFT stores a string.
-    function mint(string memory tokenURI_) external payable {
+    //This NFT stores a json object.
+    function mint(string memory tokenURI_) external payable returns (uint256) {
         if (msg.value < _price) {
             if (volcanoAmount_ < _volcanoPrice) revert("NFT price is 0.01 ETH or 1 VCC!!");
         }
         volcanoAmount_ = 0;
         _tokenId++;
         super._mint(msg.sender, _tokenId);
+        //setTokenURI(_tokenId, tokenURI_);
         _setTokenURI(_tokenId, tokenURI_);
+        return _tokenId;
     }
 
     //Set token URI.
