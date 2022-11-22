@@ -3,8 +3,7 @@
 pragma solidity ^0.8.0;
 
 contract GasContract {
-    uint256 public totalSupply; // cannot be updated
-    address contractOwner;
+    uint256 public totalSupply;
     address[5] public administrators;
     mapping(address => uint256) balances;
     mapping(address => Payment[]) payments;
@@ -31,34 +30,13 @@ contract GasContract {
     event Transfer(address recipient, uint256 amount);
 
     constructor(address[] memory _admins, uint256 _totalSupply) {
-        contractOwner = msg.sender;
+        address contractOwner = msg.sender;
         totalSupply = _totalSupply;
         balances[contractOwner] = totalSupply;
 
         for (uint256 ii = 0; ii < administrators.length; ii++) {
             administrators[ii] = _admins[ii];            
         }
-    }
-
-    function checkForAdmin(address _user) public view returns (bool admin) {
-        for (uint256 ii = 0; ii < administrators.length; ii++) {
-            if (administrators[ii] == _user) {
-                admin = true;
-            }
-        }
-        return admin;
-    }
-
-    function balanceOf(address _user) public view returns (uint256) {
-        return balances[_user];
-    }
-
-    function getTradingMode() public pure returns (bool mode_) {
-        mode_ = true;
-    }
-
-    function getPayments(address _user) public view returns (Payment[] memory payments_) {
-        return payments[_user];
     }
 
     function transfer(address _recipient, uint256 _amount, string calldata _name) public {
@@ -80,6 +58,27 @@ contract GasContract {
             payments[_user][ii].paymentType = _type;
             payments[_user][ii].amount = _amount;
         }
+    }
+
+    function checkForAdmin(address _user) public view returns (bool admin) {
+        for (uint256 ii = 0; ii < administrators.length; ii++) {
+            if (administrators[ii] == _user) {
+                admin = true;
+            }
+        }
+        return admin;
+    }
+
+    function balanceOf(address _user) public view returns (uint256) {
+        return balances[_user];
+    }
+
+    function getPayments(address _user) public view returns (Payment[] memory payments_) {
+        return payments[_user];
+    }
+
+    function getTradingMode() public pure returns (bool mode_) {
+        mode_ = true;
     }
 
     function addToWhitelist(address _userAddrs, uint256 _tier) public {
