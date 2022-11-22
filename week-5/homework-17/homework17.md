@@ -18,10 +18,12 @@ See hardhat [documentation](https://hardhat.org/hardhat-network/docs/guides/fork
 ```npx hardhat node --fork https://ethmainnet.alchemyapi.io/v2/<your key>```
 
 In Hardhat you can also specify this in the config file:
-``` networks: {
-        hardhat: {
-            forking: {
-                url: ""https://eth-mainnet.alchemyapi.io/v2/<key>"
-            }
+``` 
+networks: {
+    hardhat: {
+        forking: {
+            url: ""https://eth-mainnet.alchemyapi.io/v2/<key>"
         }
-    } ```
+    }
+}
+```
