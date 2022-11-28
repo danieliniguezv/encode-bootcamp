@@ -7,4 +7,5 @@ amount of Volcano coin that you so decide.
 2. Add a function to store a token URI.
 3. What would be the problem to add a function that allows to change the token 
 URI?
-It would then be liable to point to any other URI not pointing to the stored item.
+
+The URI could be subject to be changed not pointing to the actual stored item.
