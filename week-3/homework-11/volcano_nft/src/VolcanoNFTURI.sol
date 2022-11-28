@@ -39,7 +39,7 @@ contract VolcanoNFT is /*ERC721,*/ ERC721URIStorage, Ownable {
         volcanoToken.transfer(_volcanoAmount, msg.sender, address(this));
     }
 
-    //This NFT stores a json object.
+    //This NFT stores a URI that points to a json object.
     function mint(string memory tokenURI_) external payable returns (uint256) {
         if (msg.value < _price) {
             if (volcanoAmount_ < _volcanoPrice) revert("NFT price is 0.01 ETH or 1 VCC!!");
